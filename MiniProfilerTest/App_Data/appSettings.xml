@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<appSettings>
+	<add key="webpages:Version" value="2.0.0.0" />
+	<add key="webpages:Enabled" value="false" />
+	<add key="PreserveLoginUrl" value="true" />
+	<add key="ClientValidationEnabled" value="true" />
+	<add key="UnobtrusiveJavaScriptEnabled" value="true" />
+	
+	<add key="testLocal" value="T"/>
+	<add key="WS_Pwd" value="7d5709d1-14f1-4297-b1ee-d03e5deb77f2"/>
+	
+	<!--<add key="MD.Cache.Servers" value="172.17.30.159:11211"/>-->
+  <add key="MD.Cache.Servers" value="172.16.22.159:11211"/>
+  <add key="MD.Redis.Servers" value="172.17.30.100:6379"/>
+  <add key="MD.ApiRedis.Servers" value="172.17.30.100:6379"/>
+  <add key="MD.WebHook.IPServers" value="http://172.16.23.103:8084"/>
+  <!--<add key="MD.WebHook.IPServers" value="http://42.62.62.91:8080"/>-->
+	<add key="AttUrl" value="http://mdserver:802"/>
+	<add key="AttPath" value="\\mdserver\WebRoot\Document\attachments"/>
+	<add key="OpenLoginUrl" value="http://172.17.30.247/MD.API.Web/mdprivate/user/login" />
+
+  <!--qiniu key-->
+  <add key="QiniuMDPic" value="https://dn-mdpic.qbox.me"/>
+  <add key="ACCESS_KEY" value="QCLMePM7TGMVvirxL32Y9696IlLrdz4OsGRlRoWB" />
+  <add key="SECRET_KEY" value="EM9AV922Sb4--IkkzYfhIQjzcZlPo2dEIAELq-LH" />
+	<!--<add key="AttUrl" value="https://img.mingdao.com"/>
+	<add key="AttPath" value="\\10.6.5.230\MDFiles\MDAttachments"/>
+	<add key="OpenLoginUrl" value="https://api.mingdao.com/mdprivate/user/login" />
+	<add key="MD.Cache.Servers" value="10.6.3.122:11211"/>-->
+</appSettings>
