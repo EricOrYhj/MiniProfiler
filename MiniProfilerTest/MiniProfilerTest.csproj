@@ -131,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Action\TextResult.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -240,15 +241,24 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MiniProfiler\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Test.DAL.Mongo\Test.DAL.Mongo.csproj">
+      <Project>{7d59f14e-3413-48c3-9150-f5a5e21a9217}</Project>
+      <Name>Test.DAL.Mongo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Test.DAL.Orm\Test.DAL.Orm.csproj">
       <Project>{e0113892-791e-43af-a870-85642037c0e4}</Project>
       <Name>Test.DAL.Orm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test.Entity.Mongo\Test.Entity.Mongo.csproj">
+      <Project>{b10e6d1b-a411-4160-8de0-c2e95918fc39}</Project>
+      <Name>Test.Entity.Mongo</Name>
     </ProjectReference>
     <ProjectReference Include="..\Test.Entity.Orm\Test.Entity.Orm.csproj">
       <Project>{ed7f4876-2b4f-40f4-bf39-025220b2cf2e}</Project>

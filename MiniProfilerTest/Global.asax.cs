@@ -23,7 +23,18 @@ namespace MiniProfilerTest
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            StackExchange.Profiling.MiniProfilerEF.Initialize(); 
+            StackExchange.Profiling.MiniProfiler.Settings.Results_List_Authorize = IsUserAllowedToSeeMiniProfilerUI;
+            //StackExchange.Profiling.MiniProfiler.Settings.RouteBasePath = "~/MiniProfiler";
+        }
+
+        private bool IsUserAllowedToSeeMiniProfilerUI(HttpRequest httpRequest)
+        {
+            // Implement your own logic for who 
+            // should be able to access ~/mini-profiler-resources/results-index
+            //var principal = httpRequest.RequestContext.HttpContext.User;
+            //return principal.IsInRole("Developer");
+
+            return true;
         }
 
         protected void Application_BeginRequest()
@@ -32,10 +43,6 @@ namespace MiniProfilerTest
         }
         protected void Application_EndRequest()
         {
-            var aaaa = StackExchange.Profiling.MiniProfiler.ToJson();
-
-            var bb = StackExchange.Profiling.MiniProfiler.FromJson(aaaa);
-
             StackExchange.Profiling.MiniProfiler.Stop();
         }
     }

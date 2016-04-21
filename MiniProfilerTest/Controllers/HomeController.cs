@@ -15,13 +15,13 @@ namespace MiniProfilerTest.Controllers
 
         public ActionResult Index()
         {
-            var profiler = StackExchange.Profiling.MiniProfiler.Current;
-            using (profiler.Step("获取Product列表"))
-            {
-                var aaa = Test.DAL.Orm.AccountRepository.Instance.GetAccount("b@md.md", 1);
+            //var profiler = StackExchange.Profiling.MiniProfiler.Current;
 
-                return View(aaa);
-            }
+            //var aaa = Test.DAL.Orm.AccountRepository.Instance.GetAccount("b@md.md", 1);
+
+            var bbb = Test.DAL.Mongo.GroupProvider.Instance.GetGroupDetail();
+
+            return View(bbb);
         }
 
         [HttpGet]
@@ -36,7 +36,7 @@ namespace MiniProfilerTest.Controllers
                 {
                     PageNumber = aaa.AccountId,
                     PageSize = aaa.AccountId
-                },JsonRequestBehavior.AllowGet);
+                }, JsonRequestBehavior.AllowGet);
             }
         }
 

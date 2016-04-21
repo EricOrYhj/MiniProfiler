@@ -8,6 +8,8 @@ using Test.Entity.Orm;
 
 using StackExchange.Profiling;
 using StackExchange.Profiling.Storage;
+using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.SqlServer;
 
 namespace Test.DAL.Orm
 {
@@ -25,14 +27,17 @@ namespace Test.DAL.Orm
 
         public Account GetAccount(string account, int status = 1)
         {
+            var profiler = MiniProfiler.Current;
 
-            //MiniProfiler.Settings.Storage = new SqlServerStorage(DbConnection);
+            using (profiler.Step("data get account"))
+            {
+                using (var db = OpenDbConnection())
+                {
+                    var q = db.From<Account>().Where(a => (a.Email == account || a.MobilePhone == account) && a.Status == status);
 
-            //var profiler = MiniProfiler.Current;
-            //using (profiler.Step("data get account"))
-            //{
-                return this.Single(a => (a.Email == account || a.MobilePhone == account) && a.Status == status);
-            //}
+                    return db.Single<Account>(q);
+                }
+            }
         }
     }
 }

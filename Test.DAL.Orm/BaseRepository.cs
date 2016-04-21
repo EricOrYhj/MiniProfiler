@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq.Expressions;
 
 using ServiceStack.OrmLite;
+using StackExchange.Profiling;
+using StackExchange.Profiling.Storage;
 
 
 namespace Test.DAL.Orm
