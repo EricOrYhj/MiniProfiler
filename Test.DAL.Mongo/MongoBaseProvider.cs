@@ -31,6 +31,8 @@ namespace Test.DAL.Mongo
             var setting = MongoClientSettings.FromUrl(new MongoUrl(conUrl));
             Client = new MongoClient(setting);
             Server = new ProfiledMongoServer(Client.GetServer());
+
+            StackExchange.Profiling.MiniProfiler.Settings.Storage = new MongoDbStorage(conUrl);
         }
 
         private MongoCollection<T> GetCollection()
